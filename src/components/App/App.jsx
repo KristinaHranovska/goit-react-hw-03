@@ -1,6 +1,8 @@
 import "../../../node_modules/modern-normalize/modern-normalize.css";
-import { useState, useEffect } from "react";
 import contactsArray from "../../contacts.json";
+import css from "./App.module.css";
+
+import { useState, useEffect } from "react";
 
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
@@ -34,14 +36,16 @@ function App() {
   };
   return (
     <>
-      <h1>Phonebook</h1>
-      <ContactForm onAdd={addContact} />
-      <SearchBox value={search} onFilter={setSearch} />
-      {contacts.length !== 0 ? (
-        <ContactList contactList={filterContacts} onDelete={deleteContact} />
-      ) : (
-        <p>Your phonebook is empty 😢</p>
-      )}
+      <div className={css.container}>
+        <h1 className={css.mainTitle}>Phonebook 📱</h1>
+        <ContactForm onAdd={addContact} />
+        <SearchBox value={search} onFilter={setSearch} />
+        {contacts.length !== 0 ? (
+          <ContactList contactList={filterContacts} onDelete={deleteContact} />
+        ) : (
+          <p>Your phonebook is empty 😢</p>
+        )}
+      </div>
     </>
   );
 }

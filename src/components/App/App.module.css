@@ -1,0 +1,18 @@
+.container {
+    width: 750px;
+    padding: 10px 20px;
+    margin: 0 auto;
+
+    background-color: #E8E8E8;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.mainTitle {
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-align: center;
+
+    margin-bottom: 15px;
+}

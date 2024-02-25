@@ -2,6 +2,9 @@ import { nanoid } from "nanoid";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
+import { BsPhone, BsPerson } from "react-icons/bs";
+
+import css from "./ContactForm.module.css";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,17 +40,55 @@ const ContactForm = ({ onAdd }) => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form>
-        <label htmlFor={nameId}>Name</label>
-        <Field type="text" name="name" id={nameId} />
-        <ErrorMessage name="name" as="span" />
+      {({ errors, touched }) => (
+        <Form className={css.containerForm}>
+          <label className={css.formLabel} htmlFor={nameId}>
+            Name
+          </label>
 
-        <label htmlFor={numberId}>Number</label>
-        <Field type="text" name="number" id={numberId} />
-        <ErrorMessage name="number" as="span" />
+          <div className={css.thumb}>
+            <Field
+              className={`${css.formInput} ${
+                errors.name && touched.name && css.errorName
+              }`}
+              type="text"
+              name="name"
+              id={nameId}
+            />
+            <BsPerson className={css.iconInput} size="20" />
+          </div>
+          <ErrorMessage
+            className={css.errorSpan}
+            name="name"
+            component="span"
+          />
 
-        <button type="submit">Add contact</button>
-      </Form>
+          <label className={css.formLabel} htmlFor={numberId}>
+            Number
+          </label>
+
+          <div className={css.thumb}>
+            <Field
+              className={`${css.formInput} ${
+                errors.number && touched.number && css.errorNumber
+              }`}
+              type="text"
+              name="number"
+              id={numberId}
+            />
+            <BsPhone className={css.iconInput} size="20" />
+          </div>
+          <ErrorMessage
+            className={css.errorSpan}
+            name="number"
+            component="span"
+          />
+
+          <button className={css.buttonAdd} type="submit">
+            Add contact
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 };
