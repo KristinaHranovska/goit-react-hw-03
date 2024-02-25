@@ -24,8 +24,8 @@ const Contact = ({ data: { id, number, name }, onDelete }) => {
 };
 
 Contact.propTypes = {
-  numberContact: PropTypes.string,
-  nameContact: PropTypes.string,
+  data: PropTypes.objectOf(PropTypes.string),
+  onDelete: PropTypes.func,
 };
 
 export default Contact;

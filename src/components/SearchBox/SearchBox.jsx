@@ -1,5 +1,6 @@
 import css from "./SearchBox.module.css";
 import { IoCloseOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
 
 const SearchBox = ({ value, onFilter }) => {
   const cleanInput = () => {
@@ -23,6 +24,11 @@ const SearchBox = ({ value, onFilter }) => {
       </div>
     </div>
   );
+};
+
+SearchBox.propTypes = {
+  value: PropTypes.string,
+  onFilter: PropTypes.func,
 };
 
 export default SearchBox;
