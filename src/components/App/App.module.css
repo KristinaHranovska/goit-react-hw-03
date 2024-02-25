@@ -16,3 +16,10 @@
 
     margin-bottom: 15px;
 }
+
+.infoText {
+    font-size: 20px;
+    line-height: 1.33;
+    letter-spacing: -.01em;
+    text-align: center;
+}

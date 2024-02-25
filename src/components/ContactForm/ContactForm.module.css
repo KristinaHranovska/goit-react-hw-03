@@ -31,7 +31,7 @@
     background-color: transparent;
     outline: transparent;
 
-    transition: border-color .4s cubic-bezier(.4, 0, .2, 1);
+    transition: border-color .4s cubic-bezier(.4, 0, .2, 1), box-shadow .6s cubic-bezier(.4, 0, .2, 1);
 
     margin-bottom: 10px;
     padding: 5px 35px;
@@ -47,6 +47,7 @@
 
 .formInput:focus {
     border-color: #646864;
+    box-shadow: 0 4px 4px #00000026;
 }
 
 .iconInput {

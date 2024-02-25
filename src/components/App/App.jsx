@@ -34,16 +34,22 @@ function App() {
       return prevContacts.filter((contact) => contact.id !== contactId);
     });
   };
+
   return (
     <>
       <div className={css.container}>
         <h1 className={css.mainTitle}>Phonebook 📱</h1>
         <ContactForm onAdd={addContact} />
         <SearchBox value={search} onFilter={setSearch} />
+
         {contacts.length !== 0 ? (
           <ContactList contactList={filterContacts} onDelete={deleteContact} />
         ) : (
-          <p>Your phonebook is empty 😢</p>
+          <p className={css.infoText}>Your phonebook is empty 😢</p>
+        )}
+
+        {filterContacts.length === 0 && contacts.length !== 0 && (
+          <p className={css.infoText}>No contacts found 😢</p>
         )}
       </div>
     </>
