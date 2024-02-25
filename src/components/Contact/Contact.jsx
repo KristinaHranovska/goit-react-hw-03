@@ -1,11 +1,21 @@
+import { BsPhone, BsPerson, BsTrash } from "react-icons/bs";
 import PropTypes from "prop-types";
 
 const Contact = ({ data: { id, number, name }, onDelete }) => {
   return (
     <div>
-      <h2>{name}</h2>
-      <p>{number}</p>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <h2>
+        <BsPerson />
+        {name}
+      </h2>
+      <p>
+        <BsPhone />
+        {number}
+      </p>
+      <button onClick={() => onDelete(id)}>
+        <BsTrash />
+        Delete
+      </button>
     </div>
   );
 };
